@@ -27,7 +27,7 @@
     { "initWithNSString:", "JsonException", NULL, 0x1, NULL },
   };
   static J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_", NULL, 0x1a, "J" },
+    { "serialVersionUID_", NULL, 0x1a, "J", NULL, .constantValue.asLong = GDJsonException_serialVersionUID },
   };
   static J2ObjcClassInfo _GDJsonException = { "JsonException", "com.goodow.realtime.json", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
   return &_GDJsonException;

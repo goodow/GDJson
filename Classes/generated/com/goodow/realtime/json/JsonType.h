@@ -31,7 +31,31 @@ typedef enum {
 + (IOSObjectArray *)values;
 + (GDJsonTypeEnum *)valueOfWithNSString:(NSString *)name;
 - (id)copyWithZone:(NSZone *)zone;
+
 - (id)initWithNSString:(NSString *)__name withInt:(int)__ordinal;
 @end
+
+FOUNDATION_EXPORT BOOL GDJsonTypeEnum_initialized;
+J2OBJC_STATIC_INIT(GDJsonTypeEnum)
+
+FOUNDATION_EXPORT GDJsonTypeEnum *GDJsonTypeEnum_values[];
+
+#define GDJsonTypeEnum_OBJECT GDJsonTypeEnum_values[GDJsonType_OBJECT]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, OBJECT, GDJsonTypeEnum *)
+
+#define GDJsonTypeEnum_ARRAY GDJsonTypeEnum_values[GDJsonType_ARRAY]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, ARRAY, GDJsonTypeEnum *)
+
+#define GDJsonTypeEnum_STRING GDJsonTypeEnum_values[GDJsonType_STRING]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, STRING, GDJsonTypeEnum *)
+
+#define GDJsonTypeEnum_NUMBER GDJsonTypeEnum_values[GDJsonType_NUMBER]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, NUMBER, GDJsonTypeEnum *)
+
+#define GDJsonTypeEnum_BOOLEAN GDJsonTypeEnum_values[GDJsonType_BOOLEAN]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, BOOLEAN, GDJsonTypeEnum *)
+
+#define GDJsonTypeEnum_NULL_ GDJsonTypeEnum_values[GDJsonType_NULL]
+J2OBJC_STATIC_FIELD_GETTER(GDJsonTypeEnum, NULL_, GDJsonTypeEnum *)
 
 #endif // _GDJsonType_H_

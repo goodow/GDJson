@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary      = "Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC"
   s.homepage     = "https://github.com/goodow/realtime-json"
   s.author       = { "Larry Tin" => "dev@goodow.com" }
-  s.source       = { :git => "https://github.com/goodow/realtime-json.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/goodow/GDJson.git", :tag => "v#{s.version}" }
 
   s.requires_arc = true
   # Top level attributes can't be specified by subspecs.

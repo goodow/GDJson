@@ -13,10 +13,15 @@
 
 @protocol GDJsonElement < JavaIoSerializable, NSObject, JavaObject >
 - (id)clear;
+
 - (id)copy__ OBJC_METHOD_FAMILY_NONE;
+
 - (BOOL)isArray;
+
 - (BOOL)isObject;
+
 - (NSString *)toJsonString;
+
 @end
 
 #define ComGoodowRealtimeJsonJsonElement GDJsonElement

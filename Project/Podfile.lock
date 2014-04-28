@@ -1,19 +1,22 @@
 PODS:
   - GDJson (0.5.5):
     - J2ObjC (~> 0.8)
-  - J2ObjC (0.9):
+  - J2ObjC (0.9.1):
     - J2ObjC/lib/jre
-  - J2ObjC/lib/jre (0.9)
+  - J2ObjC/lib/jre (0.9.1)
 
 DEPENDENCIES:
   - GDJson (from `..`)
+  - J2ObjC (from `https://github.com/goodow/j2objc.git`)
 
 EXTERNAL SOURCES:
   GDJson:
     :path: ..
+  J2ObjC:
+    :git: https://github.com/goodow/j2objc.git
 
 SPEC CHECKSUMS:
-  GDJson: 30bdbae9abedc68fcb589b7d6dae0fd0804aa982
-  J2ObjC: 45d67e0e2ab5c3c0befbcac6f515dade0e8f5d78
+  GDJson: 425eaa6e2f2df52486ea4e5dcaef8d54061f7eb8
+  J2ObjC: 58e9886633bbb401041c473d8e118380f7076ed6
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

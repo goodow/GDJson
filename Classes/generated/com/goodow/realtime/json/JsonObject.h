@@ -11,36 +11,55 @@
 @class GDJsonTypeEnum;
 @class IOSObjectArray;
 @protocol GDJsonArray;
-@protocol GDJsonObject_Iterator;
+@protocol GDJsonObject_MapIterator;
 
 #import "JreEmulation.h"
 #include "com/goodow/realtime/json/JsonElement.h"
 
 @protocol GDJsonObject < GDJsonElement, NSObject, JavaObject >
 - (id<GDJsonObject>)clear;
+
 - (id<GDJsonObject>)copy__ OBJC_METHOD_FAMILY_NONE;
-- (void)forEach:(id<GDJsonObject_Iterator>)handler;
+
+- (void)forEach:(id<GDJsonObject_MapIterator>)handler;
+
 - (id)getWithNSString:(NSString *)key;
+
 - (id<GDJsonArray>)getArray:(NSString *)key;
+
 - (BOOL)getBoolean:(NSString *)key;
+
 - (double)getNumber:(NSString *)key;
+
 - (id<GDJsonObject>)getObject:(NSString *)key;
+
 - (NSString *)getString:(NSString *)key;
+
 - (GDJsonTypeEnum *)getType:(NSString *)key;
+
 - (BOOL)has:(NSString *)key;
+
 - (IOSObjectArray *)keys;
-- (id<GDJsonObject>)remove:(NSString *)key;
+
+- (id)removeWithNSString:(NSString *)key;
+
 - (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_;
+
 - (id<GDJsonObject>)set:(NSString *)key number:(double)number;
+
 - (id<GDJsonObject>)set:(NSString *)key value:(id)value;
+
 - (int)count;
+
 @end
 
 #define ComGoodowRealtimeJsonJsonObject GDJsonObject
 
-@protocol GDJsonObject_Iterator < NSObject, JavaObject >
+@protocol GDJsonObject_MapIterator < NSObject, JavaObject >
+
 - (void)callWithNSString:(NSString *)key
                   withId:(id)value;
+
 @end
 
 #endif // _GDJsonObject_H_

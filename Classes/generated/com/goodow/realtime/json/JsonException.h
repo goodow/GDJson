@@ -17,9 +17,16 @@
 }
 
 + (long long int)serialVersionUID;
+
 - (id)init;
+
 - (id)initWithNSString:(NSString *)message;
+
 @end
+
+__attribute__((always_inline)) inline void GDJsonException_init() {}
+
+J2OBJC_STATIC_FIELD_GETTER(GDJsonException, serialVersionUID, long long int)
 
 typedef GDJsonException ComGoodowRealtimeJsonJsonException;
 

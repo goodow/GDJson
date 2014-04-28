@@ -76,7 +76,7 @@
 - (IOSObjectArray *)keys {
   return [IOSObjectArray arrayWithNSArray:[self allKeys] type:[IOSClass classWithClass:[NSString class]]];
 }
-- (void)forEach:(id<GDJsonObject_Iterator>)handler {
+- (void)forEach:(id<GDJsonObject_MapIterator>)handler {
   for (NSString *key in self) {
     [handler callWithNSString:key withId:self[key]];
   }
@@ -96,7 +96,7 @@
 - (id<GDJsonObject>)clear {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonObject>)remove:(NSString *)key {
+- (id<GDJsonObject>)removeWithNSString:(NSString *)key {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 

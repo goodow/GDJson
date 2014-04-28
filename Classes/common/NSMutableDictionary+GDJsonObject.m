@@ -41,9 +41,10 @@
   [self removeAllObjects];
   return self;
 }
-- (id<GDJsonObject>)remove:(NSString *)key {
+- (id)removeWithNSString:(NSString *)key {
+  id toRtn = [self getWithNSString:key];
   [self removeObjectForKey:key];
-  return self;
+  return toRtn;
 }
 
 @end

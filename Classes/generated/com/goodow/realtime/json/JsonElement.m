@@ -7,7 +7,6 @@
 
 #include "com/goodow/realtime/json/JsonElement.h"
 
-
 @interface GDJsonElement : NSObject
 @end
 

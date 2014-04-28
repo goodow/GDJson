@@ -1,0 +1,7 @@
+language: objective-c
+xcode_workspace: Project/GDJson.xcworkspace
+xcode_scheme: GDJsonTests
+
+before_install:
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+  - cd Project && pod install && cd $TRAVIS_BUILD_DIR

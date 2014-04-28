@@ -73,7 +73,7 @@
   NSUInteger idx = [self indexOfObject:value];
   return idx == NSNotFound ? -1 : (int)idx;
 }
-- (void)forEach:(id<GDJsonArray_Iterator>)handler {
+- (void)forEach:(id<GDJsonArray_ListIterator>)handler {
   int idx = 0;
   for (id value in self) {
     [handler callWithInt:idx++ withId:value];
@@ -97,7 +97,7 @@
 - (id<GDJsonArray>)clear {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonArray>)remove:(int)index {
+- (id<GDJsonArray>)removeWithInt:(int)index {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 @end

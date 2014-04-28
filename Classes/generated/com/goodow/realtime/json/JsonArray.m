@@ -9,7 +9,6 @@
 #include "com/goodow/realtime/json/JsonObject.h"
 #include "com/goodow/realtime/json/JsonType.h"
 
-
 @interface GDJsonArray : NSObject
 @end
 
@@ -33,7 +32,7 @@
     { "pushBoolean:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "pushNumber:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "push:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
-    { "remove:", "remove", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "removeWithInt:", "remove", "TT;", 0x401, NULL },
   };
   static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 17, methods, 0, NULL, 0, NULL};
   return &_GDJsonArray;
@@ -41,17 +40,17 @@
 
 @end
 
-@interface GDJsonArray_Iterator : NSObject
+@interface GDJsonArray_ListIterator : NSObject
 @end
 
-@implementation GDJsonArray_Iterator
+@implementation GDJsonArray_ListIterator
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { "callWithInt:withId:", "call", "V", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonArray_Iterator = { "Iterator", "com.goodow.realtime.json", "JsonArray", 0x209, 1, methods, 0, NULL, 0, NULL};
-  return &_GDJsonArray_Iterator;
+  static J2ObjcClassInfo _GDJsonArray_ListIterator = { "ListIterator", "com.goodow.realtime.json", "JsonArray", 0x209, 1, methods, 0, NULL, 0, NULL};
+  return &_GDJsonArray_ListIterator;
 }
 
 @end

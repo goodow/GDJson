@@ -30,7 +30,7 @@
 - (void)testExample
 {
   NSString *jsonString = @" {} ";
-  NSMutableDictionary *json = [GDJson parse:jsonString];
+  NSMutableDictionary *json = [GDJson parseWithNSString:jsonString];
   [json setObject:@"ab" forKey:@"cd"];
 }
 

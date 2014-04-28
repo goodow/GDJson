@@ -9,7 +9,6 @@
 #include "com/goodow/realtime/json/JsonFactory.h"
 #include "com/goodow/realtime/json/JsonObject.h"
 
-
 @interface GDJsonFactory : NSObject
 @end
 

@@ -9,7 +9,7 @@
 #define _GDJsonArray_H_
 
 @class GDJsonTypeEnum;
-@protocol GDJsonArray_Iterator;
+@protocol GDJsonArray_ListIterator;
 @protocol GDJsonObject;
 
 #import "JreEmulation.h"
@@ -17,29 +17,48 @@
 
 @protocol GDJsonArray < GDJsonElement, NSObject, JavaObject >
 - (id<GDJsonArray>)clear;
+
 - (id<GDJsonArray>)copy__ OBJC_METHOD_FAMILY_NONE;
-- (void)forEach:(id<GDJsonArray_Iterator>)handler;
+
+- (void)forEach:(id<GDJsonArray_ListIterator>)handler;
+
 - (id)getWithInt:(int)index;
+
 - (id<GDJsonArray>)getArray:(int)index;
+
 - (BOOL)getBoolean:(int)index;
+
 - (double)getNumber:(int)index;
+
 - (id<GDJsonObject>)getObject:(int)index;
+
 - (NSString *)getString:(int)index;
+
 - (GDJsonTypeEnum *)getType:(int)index;
+
 - (int)indexOf:(id)value;
+
 - (id<GDJsonArray>)insert:(int)index value:(id)value;
+
 - (int)count;
+
 - (id<GDJsonArray>)pushBoolean:(BOOL)bool_;
+
 - (id<GDJsonArray>)pushNumber:(double)number;
+
 - (id<GDJsonArray>)push:(id)value;
-- (id<GDJsonArray>)remove:(int)index;
+
+- (id)removeWithInt:(int)index;
+
 @end
 
 #define ComGoodowRealtimeJsonJsonArray GDJsonArray
 
-@protocol GDJsonArray_Iterator < NSObject, JavaObject >
+@protocol GDJsonArray_ListIterator < NSObject, JavaObject >
+
 - (void)callWithInt:(int)index
              withId:(id)value;
+
 @end
 
 #endif // _GDJsonArray_H_

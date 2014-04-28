@@ -14,9 +14,13 @@
 #import "JreEmulation.h"
 
 @protocol GDJsonFactory < NSObject, JavaObject >
+
 - (id<GDJsonArray>)createArray;
+
 - (id<GDJsonObject>)createObject;
+
 - (id)parseWithNSString:(NSString *)jsonString;
+
 @end
 
 #define ComGoodowRealtimeJsonJsonFactory GDJsonFactory

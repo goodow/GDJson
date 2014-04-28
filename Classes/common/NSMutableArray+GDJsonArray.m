@@ -46,9 +46,10 @@
   [self removeAllObjects];
   return self;
 }
-- (id<GDJsonArray>)remove:(int)index {
+- (id)removeWithInt:(int)index {
+  id toRtn = [self getWithInt:index];
   [self removeObjectAtIndex:index];
-  return self;
+  return toRtn;
 }
 
 @end

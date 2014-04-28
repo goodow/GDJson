@@ -9,14 +9,9 @@
 #include "com/goodow/realtime/json/JsonType.h"
 #include "java/lang/IllegalArgumentException.h"
 
+BOOL GDJsonTypeEnum_initialized = NO;
 
-static GDJsonTypeEnum *GDJsonTypeEnum_OBJECT;
-static GDJsonTypeEnum *GDJsonTypeEnum_ARRAY;
-static GDJsonTypeEnum *GDJsonTypeEnum_STRING;
-static GDJsonTypeEnum *GDJsonTypeEnum_NUMBER;
-static GDJsonTypeEnum *GDJsonTypeEnum_BOOLEAN;
-static GDJsonTypeEnum *GDJsonTypeEnum_NULL_;
-IOSObjectArray *GDJsonTypeEnum_values;
+GDJsonTypeEnum *GDJsonTypeEnum_values[6];
 
 @implementation GDJsonTypeEnum
 
@@ -55,17 +50,17 @@ IOSObjectArray *GDJsonTypeEnum_values;
     GDJsonTypeEnum_NUMBER = [[GDJsonTypeEnum alloc] initWithNSString:@"NUMBER" withInt:3];
     GDJsonTypeEnum_BOOLEAN = [[GDJsonTypeEnum alloc] initWithNSString:@"BOOLEAN" withInt:4];
     GDJsonTypeEnum_NULL_ = [[GDJsonTypeEnum alloc] initWithNSString:@"NULL_" withInt:5];
-    GDJsonTypeEnum_values = [[IOSObjectArray alloc] initWithObjects:(id[]){ GDJsonTypeEnum_OBJECT, GDJsonTypeEnum_ARRAY, GDJsonTypeEnum_STRING, GDJsonTypeEnum_NUMBER, GDJsonTypeEnum_BOOLEAN, GDJsonTypeEnum_NULL_, nil } count:6 type:[IOSClass classWithClass:[GDJsonTypeEnum class]]];
+    GDJsonTypeEnum_initialized = YES;
   }
 }
 
 + (IOSObjectArray *)values {
-  return [IOSObjectArray arrayWithArray:GDJsonTypeEnum_values];
+  return [IOSObjectArray arrayWithObjects:GDJsonTypeEnum_values count:6 type:[IOSClass classWithClass:[GDJsonTypeEnum class]]];
 }
 
 + (GDJsonTypeEnum *)valueOfWithNSString:(NSString *)name {
-  for (int i = 0; i < [GDJsonTypeEnum_values count]; i++) {
-    GDJsonTypeEnum *e = GDJsonTypeEnum_values->buffer_[i];
+  for (int i = 0; i < 6; i++) {
+    GDJsonTypeEnum *e = GDJsonTypeEnum_values[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
