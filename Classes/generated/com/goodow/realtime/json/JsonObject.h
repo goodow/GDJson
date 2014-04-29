@@ -53,6 +53,8 @@
 
 @end
 
+__attribute__((always_inline)) inline void GDJsonObject_init() {}
+
 #define ComGoodowRealtimeJsonJsonObject GDJsonObject
 
 @protocol GDJsonObject_MapIterator < NSObject, JavaObject >
@@ -61,5 +63,7 @@
                   withId:(id)value;
 
 @end
+
+__attribute__((always_inline)) inline void GDJsonObject_MapIterator_init() {}
 
 #endif // _GDJsonObject_H_

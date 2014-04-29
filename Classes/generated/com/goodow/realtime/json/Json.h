@@ -1,4 +1,4 @@
-// Copyright 2013 Goodow.com. All Rights Reserved.
+// Copyright 2014 Goodow.com. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,10 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-//
-//  Json.h
-//  GDJson
 //
 //  Created by Larry Tin.
 //
@@ -23,6 +19,7 @@
 #define _GDJson_H_
 
 @protocol GDJsonArray;
+@protocol GDJsonFactory;
 @protocol GDJsonObject;
 @class GDJsonTypeEnum;
 
@@ -32,11 +29,15 @@
 }
 
 + (id<GDJsonArray>)createArray;
+
 + (id<GDJsonObject>)createObject;
+
 + (id)parseWithNSString:(NSString *)jsonString;
+
 + (NSString *)toJsonString:(id)element;
 + (GDJsonTypeEnum *)getType:(id)value;
 + (id)copy:(id)element;
+
 @end
 
 typedef GDJson ComGoodowRealtimeJsonJson;

@@ -15,25 +15,6 @@ GDJsonTypeEnum *GDJsonTypeEnum_values[6];
 
 @implementation GDJsonTypeEnum
 
-+ (GDJsonTypeEnum *)OBJECT {
-  return GDJsonTypeEnum_OBJECT;
-}
-+ (GDJsonTypeEnum *)ARRAY {
-  return GDJsonTypeEnum_ARRAY;
-}
-+ (GDJsonTypeEnum *)STRING {
-  return GDJsonTypeEnum_STRING;
-}
-+ (GDJsonTypeEnum *)NUMBER {
-  return GDJsonTypeEnum_NUMBER;
-}
-+ (GDJsonTypeEnum *)BOOLEAN {
-  return GDJsonTypeEnum_BOOLEAN;
-}
-+ (GDJsonTypeEnum *)NULL_ {
-  return GDJsonTypeEnum_NULL_;
-}
-
 - (id)copyWithZone:(NSZone *)zone {
   return self;
 }

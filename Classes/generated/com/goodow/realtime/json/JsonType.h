@@ -22,12 +22,6 @@ typedef enum {
 
 @interface GDJsonTypeEnum : JavaLangEnum < NSCopying > {
 }
-+ (GDJsonTypeEnum *)OBJECT;
-+ (GDJsonTypeEnum *)ARRAY;
-+ (GDJsonTypeEnum *)STRING;
-+ (GDJsonTypeEnum *)NUMBER;
-+ (GDJsonTypeEnum *)BOOLEAN;
-+ (GDJsonTypeEnum *)NULL_;
 + (IOSObjectArray *)values;
 + (GDJsonTypeEnum *)valueOfWithNSString:(NSString *)name;
 - (id)copyWithZone:(NSZone *)zone;

@@ -1,4 +1,4 @@
-// Copyright 2013 Goodow.com. All Rights Reserved.
+// Copyright 2014 Goodow.com. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -11,10 +11,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-//
-//  Json.m
-//  GDJson
 //
 //  Created by Larry Tin.
 //
@@ -60,15 +56,15 @@
 
 + (GDJsonTypeEnum *)getType:(id)value {
   if ([value isKindOfClass:[NSDictionary class]]) {
-    return [GDJsonTypeEnum OBJECT];
+    return GDJsonTypeEnum_get_OBJECT();
   } else if ([value isKindOfClass:[NSArray class]]) {
-    return [GDJsonTypeEnum ARRAY];
+    return GDJsonTypeEnum_get_ARRAY();
   } else if ([value isKindOfClass:[NSString class]]) {
-    return [GDJsonTypeEnum STRING];
+    return GDJsonTypeEnum_get_STRING();
   } else if ([value isKindOfClass:[NSNumber class]]) {
-    return [GDJsonTypeEnum NUMBER];
+    return GDJsonTypeEnum_get_NUMBER();
   } else if (value == nil) {
-    return [GDJsonTypeEnum NULL_];
+    return GDJsonTypeEnum_get_NULL_();
   }
   @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:[NSString stringWithFormat:@"Invalid JSON type: %@", [[nil_chk(value) getClass] getName]]];
 }

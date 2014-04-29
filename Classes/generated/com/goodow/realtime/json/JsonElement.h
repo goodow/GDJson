@@ -24,6 +24,8 @@
 
 @end
 
+__attribute__((always_inline)) inline void GDJsonElement_init() {}
+
 #define ComGoodowRealtimeJsonJsonElement GDJsonElement
 
 #endif // _GDJsonElement_H_

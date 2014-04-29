@@ -16,8 +16,6 @@
 @interface GDJsonException : JavaLangRuntimeException {
 }
 
-+ (long long int)serialVersionUID;
-
 - (id)init;
 
 - (id)initWithNSString:(NSString *)message;

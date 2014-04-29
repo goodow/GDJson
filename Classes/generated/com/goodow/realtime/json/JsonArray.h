@@ -52,6 +52,8 @@
 
 @end
 
+__attribute__((always_inline)) inline void GDJsonArray_init() {}
+
 #define ComGoodowRealtimeJsonJsonArray GDJsonArray
 
 @protocol GDJsonArray_ListIterator < NSObject, JavaObject >
@@ -60,5 +62,7 @@
              withId:(id)value;
 
 @end
+
+__attribute__((always_inline)) inline void GDJsonArray_ListIterator_init() {}
 
 #endif // _GDJsonArray_H_

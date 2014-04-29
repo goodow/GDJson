@@ -23,6 +23,8 @@
 
 @end
 
+__attribute__((always_inline)) inline void GDJsonFactory_init() {}
+
 #define ComGoodowRealtimeJsonJsonFactory GDJsonFactory
 
 #endif // _GDJsonFactory_H_
