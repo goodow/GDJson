@@ -51,5 +51,13 @@
   [self removeObjectAtIndex:index];
   return toRtn;
 }
+- (BOOL)removeValue:(id)value {
+  int index = [self indexOf:value];
+  if (index == -1) {
+    return NO;
+  }
+  [self removeObjectAtIndex:index];
+  return YES;
+}
 
 @end

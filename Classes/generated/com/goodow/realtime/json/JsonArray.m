@@ -33,8 +33,9 @@
     { "pushNumber:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "push:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "removeWithInt:", "remove", "TT;", 0x401, NULL },
+    { "removeValue:", "removeValue", "Z", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 17, methods, 0, NULL, 0, NULL};
+  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 18, methods, 0, NULL, 0, NULL};
   return &_GDJsonArray;
 }
 

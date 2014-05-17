@@ -100,4 +100,7 @@
 - (id<GDJsonArray>)removeWithInt:(int)index {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
+- (BOOL)removeValue:(id)value {
+  @throw [[JavaLangUnsupportedOperationException alloc] init];
+}
 @end

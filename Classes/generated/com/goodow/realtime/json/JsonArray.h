@@ -50,6 +50,8 @@
 
 - (id)removeWithInt:(int)index;
 
+- (BOOL)removeValue:(id)value;
+
 @end
 
 __attribute__((always_inline)) inline void GDJsonArray_init() {}
