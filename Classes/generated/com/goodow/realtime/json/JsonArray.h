@@ -5,66 +5,65 @@
 //  Created by retechretech.
 //
 
-#ifndef _GDJsonArray_H_
-#define _GDJsonArray_H_
+#ifndef _ComGoodowRealtimeJsonJsonArray_H_
+#define _ComGoodowRealtimeJsonJsonArray_H_
 
-@class GDJsonTypeEnum;
-@protocol GDJsonArray_ListIterator;
-@protocol GDJsonObject;
+@class ComGoodowRealtimeJsonJsonTypeEnum;
+@protocol ComGoodowRealtimeJsonJsonArray_ListIterator;
+@protocol ComGoodowRealtimeJsonJsonObject;
 
 #import "JreEmulation.h"
 #include "com/goodow/realtime/json/JsonElement.h"
 
-@protocol GDJsonArray < GDJsonElement, NSObject, JavaObject >
-- (id<GDJsonArray>)clear;
+@protocol ComGoodowRealtimeJsonJsonArray < ComGoodowRealtimeJsonJsonElement, NSObject, JavaObject >
+- (id<ComGoodowRealtimeJsonJsonArray>)clear;
 
-- (id<GDJsonArray>)copy__ OBJC_METHOD_FAMILY_NONE;
+- (id<ComGoodowRealtimeJsonJsonArray>)copy__ OBJC_METHOD_FAMILY_NONE;
 
-- (void)forEach:(id<GDJsonArray_ListIterator>)handler;
+- (void)forEachWithComGoodowRealtimeJsonJsonArray_ListIterator:(id<ComGoodowRealtimeJsonJsonArray_ListIterator>)handler;
 
 - (id)getWithInt:(int)index;
 
-- (id<GDJsonArray>)getArray:(int)index;
+- (id<ComGoodowRealtimeJsonJsonArray>)getArrayWithInt:(int)index;
 
-- (BOOL)getBoolean:(int)index;
+- (BOOL)getBooleanWithInt:(int)index;
 
-- (double)getNumber:(int)index;
+- (double)getNumberWithInt:(int)index;
 
-- (id<GDJsonObject>)getObject:(int)index;
+- (id<ComGoodowRealtimeJsonJsonObject>)getObjectWithInt:(int)index;
 
-- (NSString *)getString:(int)index;
+- (NSString *)getStringWithInt:(int)index;
 
-- (GDJsonTypeEnum *)getType:(int)index;
+- (ComGoodowRealtimeJsonJsonTypeEnum *)getTypeWithInt:(int)index;
 
-- (int)indexOf:(id)value;
+- (int)indexOfWithId:(id)value;
 
-- (id<GDJsonArray>)insert:(int)index value:(id)value;
+- (id<ComGoodowRealtimeJsonJsonArray>)insertWithInt:(int)index
+                                             withId:(id)value;
 
-- (int)count;
+- (int)length;
 
-- (id<GDJsonArray>)pushBoolean:(BOOL)bool_;
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithBoolean:(BOOL)bool_;
 
-- (id<GDJsonArray>)pushNumber:(double)number;
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithDouble:(double)number;
 
-- (id<GDJsonArray>)push:(id)value;
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithId:(id)value;
 
 - (id)removeWithInt:(int)index;
 
-- (BOOL)removeValue:(id)value;
+- (BOOL)removeValueWithId:(id)value;
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonArray_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonArray_init() {}
 
-#define ComGoodowRealtimeJsonJsonArray GDJsonArray
-
-@protocol GDJsonArray_ListIterator < NSObject, JavaObject >
+@protocol ComGoodowRealtimeJsonJsonArray_ListIterator < NSObject, JavaObject >
 
 - (void)callWithInt:(int)index
              withId:(id)value;
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonArray_ListIterator_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonArray_ListIterator_init() {}
 
-#endif // _GDJsonArray_H_
+#endif // _ComGoodowRealtimeJsonJsonArray_H_

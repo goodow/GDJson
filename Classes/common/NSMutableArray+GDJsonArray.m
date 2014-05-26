@@ -20,29 +20,31 @@
 //
 
 #import "NSMutableArray+GDJsonArray.h"
+#import "com/goodow/realtime/json/JsonArray.h"
+#import "NSArray+GDJsonArray.h"
 
 @implementation NSMutableArray (GDJsonArray)
 
 #pragma mark - JsonArray mutable methods
-- (id<GDJsonArray>)insert:(int)index value:(id)value {
+- (id<ComGoodowRealtimeJsonJsonArray>)insertWithInt:(int)index withId:(id)value {
   [self insertObject:value == nil ? [NSNull null] : value atIndex:index];
   return self;
 }
 
-- (id<GDJsonArray>)pushBoolean:(BOOL)bool_ {
-  [self push:[NSNumber numberWithBool:bool_]];
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithBoolean:(BOOL)bool_ {
+  [self pushWithId:[NSNumber numberWithBool:bool_]];
   return self;
 }
-- (id<GDJsonArray>)pushNumber:(double)number {
-  [self push:[NSNumber numberWithDouble:number]];
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithDouble:(double)number {
+  [self pushWithId:[NSNumber numberWithDouble:number]];
   return self;
 }
-- (id<GDJsonArray>)push:(id)value {
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithId:(id)value {
   [self addObject:value == nil ? [NSNull null] : value];
   return self;
 }
 
-- (id<GDJsonArray>)clear {
+- (id<ComGoodowRealtimeJsonJsonArray>)clear {
   [self removeAllObjects];
   return self;
 }
@@ -51,8 +53,8 @@
   [self removeObjectAtIndex:index];
   return toRtn;
 }
-- (BOOL)removeValue:(id)value {
-  int index = [self indexOf:value];
+- (BOOL)removeValueWithId:(id)value {
+  int index = [self indexOfWithId:value];
   if (index == -1) {
     return NO;
   }

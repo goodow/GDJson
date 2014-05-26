@@ -16,17 +16,19 @@
 //
 
 #import "com/goodow/realtime/json/Json.h"
+#import "NSArray+GDJsonArray.h"
+#import "NSDictionary+GDJsonObject.h"
+#import "com/goodow/realtime/json/JsonException.h"
 #import "java/lang/IllegalArgumentException.h"
 #import "IOSClass.h"
-#import "GDJson.h"
 
-@implementation GDJson
+@implementation ComGoodowRealtimeJsonJson
 
-+ (id<GDJsonArray>)createArray {
++ (id<ComGoodowRealtimeJsonJsonArray>)createArray {
   return [[NSMutableArray alloc] init];
 }
 
-+ (id<GDJsonObject>)createObject {
++ (id<ComGoodowRealtimeJsonJsonObject>)createObject {
   return [[NSMutableDictionary alloc] init];
 }
 
@@ -36,7 +38,7 @@
                                             options:NSJSONReadingMutableContainers | NSJSONReadingAllowFragments
                                               error:&error];
   if (!json) {
-    @throw [[GDJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Can't parse JSON string: %@", error]];
+    @throw [[ComGoodowRealtimeJsonJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Can't parse JSON string: %@", error]];
   } else {
     return json;
   }
@@ -48,29 +50,29 @@
                                                      options:0
                                                        error:&error];
   if (!jsonData) {
-    @throw [[GDJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Failed to encode as JSON: %@", error]];
+    @throw [[ComGoodowRealtimeJsonJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Failed to encode as JSON: %@", error]];
   } else {
     return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
   }
 }
 
-+ (GDJsonTypeEnum *)getType:(id)value {
++ (ComGoodowRealtimeJsonJsonTypeEnum *)getType:(id)value {
   if ([value isKindOfClass:[NSDictionary class]]) {
-    return GDJsonTypeEnum_get_OBJECT();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_OBJECT();
   } else if ([value isKindOfClass:[NSArray class]]) {
-    return GDJsonTypeEnum_get_ARRAY();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_ARRAY();
   } else if ([value isKindOfClass:[NSString class]]) {
-    return GDJsonTypeEnum_get_STRING();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_STRING();
   } else if ([value isKindOfClass:[NSNumber class]]) {
-    return GDJsonTypeEnum_get_NUMBER();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_NUMBER();
   } else if (value == nil) {
-    return GDJsonTypeEnum_get_NULL_();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_NULL_();
   }
   @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:[NSString stringWithFormat:@"Invalid JSON type: %@", [[nil_chk(value) getClass] getName]]];
 }
 
 + (id)copy:(id)element {
-  return [GDJson parseWithNSString:[GDJson toJsonString:element]];
+  return [ComGoodowRealtimeJsonJson parseWithNSString:[ComGoodowRealtimeJsonJson toJsonString:element]];
 }
 
 @end

@@ -19,7 +19,7 @@
 //  Created by Larry Tin.
 //
 
-#import "GDJson.h"
+#import <Foundation/Foundation.h>
 
 @interface NSMutableArray (GDJsonArray)
 

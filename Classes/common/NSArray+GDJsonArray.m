@@ -19,7 +19,9 @@
 //  Created by Larry Tin.
 //
 
+#import "com/goodow/realtime/json/JsonArray.h"
 #import "NSArray+GDJsonArray.h"
+#import "com/goodow/realtime/json/Json.h"
 #import "java/lang/UnsupportedOperationException.h"
 
 @implementation NSArray (GDJsonArray)
@@ -32,48 +34,48 @@
   return NO;
 }
 - (NSString *)toJsonString {
-  return [GDJson toJsonString:self];
+  return [ComGoodowRealtimeJsonJson toJsonString:self];
 }
 -(NSString *)description {
   return [self toJsonString];
 }
--(id<GDJsonArray>)copy__ {
-  return [GDJson copy:self];
+-(id<ComGoodowRealtimeJsonJsonArray>)copy__ {
+  return [ComGoodowRealtimeJsonJson copy:self];
 }
 
 #pragma mark - JsonArray
-- (id)get:(int)index {
+- (id)getWithInt:(int)index {
   id value = [self objectAtIndex:index];
   return value == [NSNull null] ? nil : value;
 }
-- (id)getWithInt:(int)index {
-  return [self get:index];
+- (id<ComGoodowRealtimeJsonJsonArray>)getArrayWithInt:(int)index {
+  return [self getWithInt:index];
 }
-- (id<GDJsonArray>)getArray:(int)index {
-  return [self get:index];
+- (BOOL)getBooleanWithInt:(int)index {
+  return [((NSNumber *)[self getWithInt:index]) boolValue];
 }
-- (BOOL)getBoolean:(int)index {
-  return [((NSNumber *)[self get:index]) boolValue];
+- (double)getNumberWithInt:(int)index {
+  return [((NSNumber *)[self getWithInt:index]) doubleValue];
 }
-- (double)getNumber:(int)index {
-  return [((NSNumber *)[self get:index]) doubleValue];
+- (id<ComGoodowRealtimeJsonJsonObject>)getObjectWithInt:(int)index {
+  return [self getWithInt:index];
 }
-- (id<GDJsonObject>)getObject:(int)index {
-  return [self get:index];
+- (NSString *)getStringWithInt:(int)index {
+  return [self getWithInt:index];
 }
-- (NSString *)getString:(int)index {
-  return [self get:index];
-}
-
-- (GDJsonTypeEnum *)getType:(int)index {
-  return [GDJson getType:[self get:index]];
+- (int)length {
+  return (int) [self count];
 }
 
-- (int)indexOf:(id)value {
+- (ComGoodowRealtimeJsonJsonTypeEnum *)getTypeWithInt:(int)index {
+  return [ComGoodowRealtimeJsonJson getType:[self getWithInt:index]];
+}
+
+- (int)indexOfWithId:(id)value {
   NSUInteger idx = [self indexOfObject:value];
   return idx == NSNotFound ? -1 : (int)idx;
 }
-- (void)forEach:(id<GDJsonArray_ListIterator>)handler {
+- (void)forEachWithComGoodowRealtimeJsonJsonArray_ListIterator:(id<ComGoodowRealtimeJsonJsonArray_ListIterator>)handler {
   int idx = 0;
   for (id value in self) {
     [handler callWithInt:idx++ withId:value];
@@ -81,26 +83,26 @@
 }
 
 #pragma mark - Mutable JsonArray
-- (id<GDJsonArray>)insert:(int)index value:(id)value {
+- (id<ComGoodowRealtimeJsonJsonArray>)insertWithInt:(int)index withId:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonArray>)pushBoolean:(BOOL)bool_ {
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithBoolean:(BOOL)bool_ {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonArray>)pushNumber:(double)number {
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithDouble:(double)number {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonArray>)push:(id)value {
+- (id<ComGoodowRealtimeJsonJsonArray>)pushWithId:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 
-- (id<GDJsonArray>)clear {
+- (id<ComGoodowRealtimeJsonJsonArray>)clear {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonArray>)removeWithInt:(int)index {
+- (id)removeWithInt:(int)index {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (BOOL)removeValue:(id)value {
+- (BOOL)removeValueWithId:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 @end

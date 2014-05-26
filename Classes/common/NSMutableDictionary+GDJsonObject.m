@@ -20,24 +20,26 @@
 //
 
 #import "NSMutableDictionary+GDJsonObject.h"
+#import "com/goodow/realtime/json/JsonObject.h"
+#import "NSDictionary+GDJsonObject.h"
 
 @implementation NSMutableDictionary (GDJsonObject)
 
 #pragma mark - JsonObject mutable methods
-- (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_ {
-  [self set:key value:[NSNumber numberWithBool:bool_]];
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withBoolean:(BOOL)bool_ {
+  [self setWithNSString:key withId:[NSNumber numberWithBool:bool_]];
   return self;
 }
-- (id<GDJsonObject>)set:(NSString *)key number:(double)number {
-  [self set:key value:[NSNumber numberWithDouble:number]];
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withDouble:(double)number {
+  [self setWithNSString:key withId:[NSNumber numberWithDouble:number]];
   return self;
 }
-- (id<GDJsonObject>)set:(NSString *)key value:(id)value {
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withId:(id)value {
   [self setValue:value == nil ? [NSNull null] : value forKey:key];
   return self;
 }
 
-- (id<GDJsonObject>)clear {
+- (id<ComGoodowRealtimeJsonJsonObject>)clear {
   [self removeAllObjects];
   return self;
 }

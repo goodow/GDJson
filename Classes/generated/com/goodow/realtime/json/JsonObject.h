@@ -5,65 +5,66 @@
 //  Created by retechretech.
 //
 
-#ifndef _GDJsonObject_H_
-#define _GDJsonObject_H_
+#ifndef _ComGoodowRealtimeJsonJsonObject_H_
+#define _ComGoodowRealtimeJsonJsonObject_H_
 
-@class GDJsonTypeEnum;
+@class ComGoodowRealtimeJsonJsonTypeEnum;
 @class IOSObjectArray;
-@protocol GDJsonArray;
-@protocol GDJsonObject_MapIterator;
+@protocol ComGoodowRealtimeJsonJsonArray;
+@protocol ComGoodowRealtimeJsonJsonObject_MapIterator;
 
 #import "JreEmulation.h"
 #include "com/goodow/realtime/json/JsonElement.h"
 
-@protocol GDJsonObject < GDJsonElement, NSObject, JavaObject >
-- (id<GDJsonObject>)clear;
+@protocol ComGoodowRealtimeJsonJsonObject < ComGoodowRealtimeJsonJsonElement, NSObject, JavaObject >
+- (id<ComGoodowRealtimeJsonJsonObject>)clear;
 
-- (id<GDJsonObject>)copy__ OBJC_METHOD_FAMILY_NONE;
+- (id<ComGoodowRealtimeJsonJsonObject>)copy__ OBJC_METHOD_FAMILY_NONE;
 
-- (void)forEach:(id<GDJsonObject_MapIterator>)handler;
+- (void)forEachWithComGoodowRealtimeJsonJsonObject_MapIterator:(id<ComGoodowRealtimeJsonJsonObject_MapIterator>)handler;
 
 - (id)getWithNSString:(NSString *)key;
 
-- (id<GDJsonArray>)getArray:(NSString *)key;
+- (id<ComGoodowRealtimeJsonJsonArray>)getArrayWithNSString:(NSString *)key;
 
-- (BOOL)getBoolean:(NSString *)key;
+- (BOOL)getBooleanWithNSString:(NSString *)key;
 
-- (double)getNumber:(NSString *)key;
+- (double)getNumberWithNSString:(NSString *)key;
 
-- (id<GDJsonObject>)getObject:(NSString *)key;
+- (id<ComGoodowRealtimeJsonJsonObject>)getObjectWithNSString:(NSString *)key;
 
-- (NSString *)getString:(NSString *)key;
+- (NSString *)getStringWithNSString:(NSString *)key;
 
-- (GDJsonTypeEnum *)getType:(NSString *)key;
+- (ComGoodowRealtimeJsonJsonTypeEnum *)getTypeWithNSString:(NSString *)key;
 
-- (BOOL)has:(NSString *)key;
+- (BOOL)hasWithNSString:(NSString *)key;
 
 - (IOSObjectArray *)keys;
 
 - (id)removeWithNSString:(NSString *)key;
 
-- (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_;
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key
+                                           withBoolean:(BOOL)bool_;
 
-- (id<GDJsonObject>)set:(NSString *)key number:(double)number;
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key
+                                            withDouble:(double)number;
 
-- (id<GDJsonObject>)set:(NSString *)key value:(id)value;
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key
+                                                withId:(id)value;
 
-- (int)count;
+- (int)size;
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonObject_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonObject_init() {}
 
-#define ComGoodowRealtimeJsonJsonObject GDJsonObject
-
-@protocol GDJsonObject_MapIterator < NSObject, JavaObject >
+@protocol ComGoodowRealtimeJsonJsonObject_MapIterator < NSObject, JavaObject >
 
 - (void)callWithNSString:(NSString *)key
                   withId:(id)value;
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonObject_MapIterator_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonObject_MapIterator_init() {}
 
-#endif // _GDJsonObject_H_
+#endif // _ComGoodowRealtimeJsonJsonObject_H_

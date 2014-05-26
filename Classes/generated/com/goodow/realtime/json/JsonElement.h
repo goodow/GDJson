@@ -5,13 +5,13 @@
 //  Created by retechretech.
 //
 
-#ifndef _GDJsonElement_H_
-#define _GDJsonElement_H_
+#ifndef _ComGoodowRealtimeJsonJsonElement_H_
+#define _ComGoodowRealtimeJsonJsonElement_H_
 
 #import "JreEmulation.h"
 #include "java/io/Serializable.h"
 
-@protocol GDJsonElement < JavaIoSerializable, NSObject, JavaObject >
+@protocol ComGoodowRealtimeJsonJsonElement < JavaIoSerializable, NSObject, JavaObject >
 - (id)clear;
 
 - (id)copy__ OBJC_METHOD_FAMILY_NONE;
@@ -24,8 +24,6 @@
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonElement_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonElement_init() {}
 
-#define ComGoodowRealtimeJsonJsonElement GDJsonElement
-
-#endif // _GDJsonElement_H_
+#endif // _ComGoodowRealtimeJsonJsonElement_H_

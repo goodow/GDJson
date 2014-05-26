@@ -10,48 +10,48 @@
 #include "com/goodow/realtime/json/JsonObject.h"
 #include "com/goodow/realtime/json/JsonType.h"
 
-@interface GDJsonObject : NSObject
+@interface ComGoodowRealtimeJsonJsonObject : NSObject
 @end
 
-@implementation GDJsonObject
+@implementation ComGoodowRealtimeJsonJsonObject
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { "clear", NULL, "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "copy__", "copy", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
-    { "forEach:", "forEach", "V", 0x401, NULL },
+    { "forEachWithComGoodowRealtimeJsonJsonObject_MapIterator:", "forEach", "V", 0x401, NULL },
     { "getWithNSString:", "get", "TT;", 0x401, NULL },
-    { "getArray:", "getArray", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
-    { "getBoolean:", "getBoolean", "Z", 0x401, NULL },
-    { "getNumber:", "getNumber", "D", 0x401, NULL },
-    { "getObject:", "getObject", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
-    { "getString:", "getString", "Ljava.lang.String;", 0x401, NULL },
-    { "getType:", "getType", "Lcom.goodow.realtime.json.JsonType;", 0x401, NULL },
-    { "has:", "has", "Z", 0x401, NULL },
+    { "getArrayWithNSString:", "getArray", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "getBooleanWithNSString:", "getBoolean", "Z", 0x401, NULL },
+    { "getNumberWithNSString:", "getNumber", "D", 0x401, NULL },
+    { "getObjectWithNSString:", "getObject", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "getStringWithNSString:", "getString", "Ljava.lang.String;", 0x401, NULL },
+    { "getTypeWithNSString:", "getType", "Lcom.goodow.realtime.json.JsonType;", 0x401, NULL },
+    { "hasWithNSString:", "has", "Z", 0x401, NULL },
     { "keys", NULL, "[Ljava.lang.String;", 0x401, NULL },
     { "removeWithNSString:", "remove", "TT;", 0x401, NULL },
-    { "set:boolean:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
-    { "set:number:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
-    { "set:value:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
-    { "count", "size", "I", 0x401, NULL },
+    { "setWithNSString:withBoolean:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "setWithNSString:withDouble:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "setWithNSString:withId:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "size", NULL, "I", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 17, methods, 0, NULL, 0, NULL};
-  return &_GDJsonObject;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 17, methods, 0, NULL, 0, NULL};
+  return &_ComGoodowRealtimeJsonJsonObject;
 }
 
 @end
 
-@interface GDJsonObject_MapIterator : NSObject
+@interface ComGoodowRealtimeJsonJsonObject_MapIterator : NSObject
 @end
 
-@implementation GDJsonObject_MapIterator
+@implementation ComGoodowRealtimeJsonJsonObject_MapIterator
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { "callWithNSString:withId:", "call", "V", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonObject_MapIterator = { "MapIterator", "com.goodow.realtime.json", "JsonObject", 0x209, 1, methods, 0, NULL, 0, NULL};
-  return &_GDJsonObject_MapIterator;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonObject_MapIterator = { "MapIterator", "com.goodow.realtime.json", "JsonObject", 0x209, 1, methods, 0, NULL, 0, NULL};
+  return &_ComGoodowRealtimeJsonJsonObject_MapIterator;
 }
 
 @end

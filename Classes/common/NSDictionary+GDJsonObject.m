@@ -19,9 +19,11 @@
 //  Created by Larry Tin.
 //
 
+#import "com/goodow/realtime/json/JsonObject.h"
 #import "NSDictionary+GDJsonObject.h"
-#import "IOSClass.h"
+#import "com/goodow/realtime/json/Json.h"
 #import "java/lang/UnsupportedOperationException.h"
+#import "IOSClass.h"
 
 @implementation NSDictionary (GDJsonObject)
 
@@ -33,70 +35,70 @@
   return YES;
 }
 - (NSString *)toJsonString {
-  return [GDJson toJsonString:self];
+  return [ComGoodowRealtimeJsonJson toJsonString:self];
 }
 -(NSString *)description {
   return [self toJsonString];
 }
 -(id)copy__ {
-  return [GDJson copy:self];
+  return [ComGoodowRealtimeJsonJson copy:self];
 }
 
 #pragma mark - JsonObject
-- (id)get:(NSString *)key {
+- (id)getWithNSString:(NSString *)key {
   id value = [self objectForKey:key];
   return value == [NSNull null] ? nil : value;
 }
-- (id)getWithNSString:(NSString *)key {
-  return [self get:key];
+- (id<ComGoodowRealtimeJsonJsonArray>)getArrayWithNSString:(NSString *)key {
+  return [self getWithNSString:key];
 }
-- (id<GDJsonArray>)getArray:(NSString *)key {
-  return [self get:key];
+- (BOOL)getBooleanWithNSString:(NSString *)key {
+  return [((NSNumber *)[self getWithNSString:key]) boolValue];
 }
-- (BOOL)getBoolean:(NSString *)key {
-  return [((NSNumber *)[self get:key]) boolValue];
+- (double)getNumberWithNSString:(NSString *)key {
+  return [((NSNumber *)[self getWithNSString:key]) doubleValue];
 }
-- (double)getNumber:(NSString *)key {
-  return [((NSNumber *)[self get:key]) doubleValue];
+- (id<ComGoodowRealtimeJsonJsonObject>)getObjectWithNSString:(NSString *)key {
+  return [self getWithNSString:key];
 }
-- (id<GDJsonObject>)getObject:(NSString *)key {
-  return [self get:key];
+- (NSString *)getStringWithNSString:(NSString *)key {
+  return [self getWithNSString:key];
 }
-- (NSString *)getString:(NSString *)key {
-  return [self get:key];
-}
-
-- (GDJsonTypeEnum *)getType:(NSString *)key {
-  return [GDJson getType:[self get:key]];
+-(int)size {
+  return (int) [self count];
 }
 
-- (BOOL)has:(NSString *)key {
+- (ComGoodowRealtimeJsonJsonTypeEnum *)getTypeWithNSString:(NSString *)key {
+  return [ComGoodowRealtimeJsonJson getType:[self getWithNSString:key]];
+}
+
+- (BOOL)hasWithNSString:(NSString *)key {
   return [self objectForKey:key] != nil;
 }
 - (IOSObjectArray *)keys {
   return [IOSObjectArray arrayWithNSArray:[self allKeys] type:[IOSClass classWithClass:[NSString class]]];
 }
-- (void)forEach:(id<GDJsonObject_MapIterator>)handler {
+- (void)forEachWithComGoodowRealtimeJsonJsonObject_MapIterator:(id<ComGoodowRealtimeJsonJsonObject_MapIterator>)handler {
   for (NSString *key in self) {
     [handler callWithNSString:key withId:self[key]];
   }
 }
 
 #pragma mark - Mutable JsonObject
-- (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_ {
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withBoolean:(BOOL)bool_ {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonObject>)set:(NSString *)key number:(double)number {
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withDouble:(double)number {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonObject>)set:(NSString *)key value:(id)value {
+- (id<ComGoodowRealtimeJsonJsonObject>)setWithNSString:(NSString *)key withId:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 
-- (id<GDJsonObject>)clear {
+- (id<ComGoodowRealtimeJsonJsonObject>)clear {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
-- (id<GDJsonObject>)removeWithNSString:(NSString *)key {
+- (id)removeWithNSString:(NSString *)key {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 

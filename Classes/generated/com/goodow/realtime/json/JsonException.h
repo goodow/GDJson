@@ -5,15 +5,15 @@
 //  Created by retechretech.
 //
 
-#ifndef _GDJsonException_H_
-#define _GDJsonException_H_
+#ifndef _ComGoodowRealtimeJsonJsonException_H_
+#define _ComGoodowRealtimeJsonJsonException_H_
 
 #import "JreEmulation.h"
 #include "java/lang/RuntimeException.h"
 
-#define GDJsonException_serialVersionUID 5592603246082277358LL
+#define ComGoodowRealtimeJsonJsonException_serialVersionUID 5592603246082277358LL
 
-@interface GDJsonException : JavaLangRuntimeException {
+@interface ComGoodowRealtimeJsonJsonException : JavaLangRuntimeException {
 }
 
 - (id)init;
@@ -22,10 +22,8 @@
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonException_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonException_init() {}
 
-J2OBJC_STATIC_FIELD_GETTER(GDJsonException, serialVersionUID, long long int)
+J2OBJC_STATIC_FIELD_GETTER(ComGoodowRealtimeJsonJsonException, serialVersionUID, long long int)
 
-typedef GDJsonException ComGoodowRealtimeJsonJsonException;
-
-#endif // _GDJsonException_H_
+#endif // _ComGoodowRealtimeJsonJsonException_H_

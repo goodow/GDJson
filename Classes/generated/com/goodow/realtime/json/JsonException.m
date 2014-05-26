@@ -7,7 +7,7 @@
 
 #include "com/goodow/realtime/json/JsonException.h"
 
-@implementation GDJsonException
+@implementation ComGoodowRealtimeJsonJsonException
 
 - (id)init {
   return [super init];
@@ -23,10 +23,10 @@
     { "initWithNSString:", "JsonException", NULL, 0x1, NULL },
   };
   static J2ObjcFieldInfo fields[] = {
-    { "serialVersionUID_JsonException_", "serialVersionUID", 0x1a, "J", NULL, .constantValue.asLong = GDJsonException_serialVersionUID },
+    { "serialVersionUID_JsonException_", "serialVersionUID", 0x1a, "J", NULL, .constantValue.asLong = ComGoodowRealtimeJsonJsonException_serialVersionUID },
   };
-  static J2ObjcClassInfo _GDJsonException = { "JsonException", "com.goodow.realtime.json", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
-  return &_GDJsonException;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonException = { "JsonException", "com.goodow.realtime.json", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
+  return &_ComGoodowRealtimeJsonJsonException;
 }
 
 @end

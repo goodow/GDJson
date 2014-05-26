@@ -9,11 +9,11 @@
 #include "com/goodow/realtime/json/JsonType.h"
 #include "java/lang/IllegalArgumentException.h"
 
-BOOL GDJsonTypeEnum_initialized = NO;
+BOOL ComGoodowRealtimeJsonJsonTypeEnum_initialized = NO;
 
-GDJsonTypeEnum *GDJsonTypeEnum_values[6];
+ComGoodowRealtimeJsonJsonTypeEnum *ComGoodowRealtimeJsonJsonTypeEnum_values[6];
 
-@implementation GDJsonTypeEnum
+@implementation ComGoodowRealtimeJsonJsonTypeEnum
 
 - (id)copyWithZone:(NSZone *)zone {
   return self;
@@ -24,24 +24,24 @@ GDJsonTypeEnum *GDJsonTypeEnum_values[6];
 }
 
 + (void)initialize {
-  if (self == [GDJsonTypeEnum class]) {
-    GDJsonTypeEnum_OBJECT = [[GDJsonTypeEnum alloc] initWithNSString:@"OBJECT" withInt:0];
-    GDJsonTypeEnum_ARRAY = [[GDJsonTypeEnum alloc] initWithNSString:@"ARRAY" withInt:1];
-    GDJsonTypeEnum_STRING = [[GDJsonTypeEnum alloc] initWithNSString:@"STRING" withInt:2];
-    GDJsonTypeEnum_NUMBER = [[GDJsonTypeEnum alloc] initWithNSString:@"NUMBER" withInt:3];
-    GDJsonTypeEnum_BOOLEAN = [[GDJsonTypeEnum alloc] initWithNSString:@"BOOLEAN" withInt:4];
-    GDJsonTypeEnum_NULL_ = [[GDJsonTypeEnum alloc] initWithNSString:@"NULL_" withInt:5];
-    GDJsonTypeEnum_initialized = YES;
+  if (self == [ComGoodowRealtimeJsonJsonTypeEnum class]) {
+    ComGoodowRealtimeJsonJsonTypeEnum_OBJECT = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"OBJECT" withInt:0];
+    ComGoodowRealtimeJsonJsonTypeEnum_ARRAY = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"ARRAY" withInt:1];
+    ComGoodowRealtimeJsonJsonTypeEnum_STRING = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"STRING" withInt:2];
+    ComGoodowRealtimeJsonJsonTypeEnum_NUMBER = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"NUMBER" withInt:3];
+    ComGoodowRealtimeJsonJsonTypeEnum_BOOLEAN = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"BOOLEAN" withInt:4];
+    ComGoodowRealtimeJsonJsonTypeEnum_NULL_ = [[ComGoodowRealtimeJsonJsonTypeEnum alloc] initWithNSString:@"NULL_" withInt:5];
+    ComGoodowRealtimeJsonJsonTypeEnum_initialized = YES;
   }
 }
 
 + (IOSObjectArray *)values {
-  return [IOSObjectArray arrayWithObjects:GDJsonTypeEnum_values count:6 type:[IOSClass classWithClass:[GDJsonTypeEnum class]]];
+  return [IOSObjectArray arrayWithObjects:ComGoodowRealtimeJsonJsonTypeEnum_values count:6 type:[IOSClass classWithClass:[ComGoodowRealtimeJsonJsonTypeEnum class]]];
 }
 
-+ (GDJsonTypeEnum *)valueOfWithNSString:(NSString *)name {
++ (ComGoodowRealtimeJsonJsonTypeEnum *)valueOfWithNSString:(NSString *)name {
   for (int i = 0; i < 6; i++) {
-    GDJsonTypeEnum *e = GDJsonTypeEnum_values[i];
+    ComGoodowRealtimeJsonJsonTypeEnum *e = ComGoodowRealtimeJsonJsonTypeEnum_values[i];
     if ([name isEqual:[e name]]) {
       return e;
     }
@@ -55,8 +55,8 @@ GDJsonTypeEnum *GDJsonTypeEnum_values[6];
     { "init", NULL, NULL, 0x1, NULL },
   };
   static const char *superclass_type_args[] = {"Lcom.goodow.realtime.json.JsonType;"};
-  static J2ObjcClassInfo _GDJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 1, methods, 0, NULL, 1, superclass_type_args};
-  return &_GDJsonTypeEnum;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 1, methods, 0, NULL, 1, superclass_type_args};
+  return &_ComGoodowRealtimeJsonJsonTypeEnum;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "com/goodow/realtime/json/Json.h"
 #import "GDJson.h"
 
 @interface GDJsonTests : XCTestCase
@@ -30,8 +31,11 @@
 - (void)testExample
 {
   NSString *jsonString = @" {} ";
-  NSMutableDictionary *json = [GDJson parseWithNSString:jsonString];
-  [json setObject:@"ab" forKey:@"cd"];
+  id<ComGoodowRealtimeJsonJsonObject> obj = [ComGoodowRealtimeJsonJson parseWithNSString:jsonString];
+  [obj setWithNSString:@"key1" withId:@"value1"];
+  [obj setWithNSString:@"key2" withBoolean:YES];
+  [obj setWithNSString:@"key3" withDouble:4.2];
+  NSString *json = [obj toJsonString];
 }
 
 @end

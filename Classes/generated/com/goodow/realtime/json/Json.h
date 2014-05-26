@@ -15,31 +15,24 @@
 //  Created by Larry Tin.
 //
 
-#ifndef _GDJson_H_
-#define _GDJson_H_
+#ifndef _ComGoodowRealtimeJsonJson_H_
+#define _ComGoodowRealtimeJsonJson_H_
 
-@protocol GDJsonArray;
-@protocol GDJsonFactory;
-@protocol GDJsonObject;
-@class GDJsonTypeEnum;
+#import "com/goodow/realtime/json/JsonArray.h"
+#import "com/goodow/realtime/json/JsonObject.h"
+#import "com/goodow/realtime/json/JsonType.h"
 
-#import "JreEmulation.h"
-
-@interface GDJson : NSObject {
+@interface ComGoodowRealtimeJsonJson : NSObject {
 }
 
-+ (id<GDJsonArray>)createArray;
-
-+ (id<GDJsonObject>)createObject;
-
++ (id<ComGoodowRealtimeJsonJsonArray>)createArray;
++ (id<ComGoodowRealtimeJsonJsonObject>)createObject;
 + (id)parseWithNSString:(NSString *)jsonString;
 
 + (NSString *)toJsonString:(id)element;
-+ (GDJsonTypeEnum *)getType:(id)value;
++ (ComGoodowRealtimeJsonJsonTypeEnum *)getType:(id)value;
 + (id)copy:(id)element;
 
 @end
 
-typedef GDJson ComGoodowRealtimeJsonJson;
-
-#endif // _GDJson_H_
+#endif // _ComGoodowRealtimeJsonJson_H_

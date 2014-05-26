@@ -9,10 +9,10 @@
 #include "com/goodow/realtime/json/JsonFactory.h"
 #include "com/goodow/realtime/json/JsonObject.h"
 
-@interface GDJsonFactory : NSObject
+@interface ComGoodowRealtimeJsonJsonFactory : NSObject
 @end
 
-@implementation GDJsonFactory
+@implementation ComGoodowRealtimeJsonJsonFactory
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -20,8 +20,8 @@
     { "createObject", NULL, "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "parseWithNSString:", "parse", "TT;", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonFactory = { "JsonFactory", "com.goodow.realtime.json", NULL, 0x201, 3, methods, 0, NULL, 0, NULL};
-  return &_GDJsonFactory;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonFactory = { "JsonFactory", "com.goodow.realtime.json", NULL, 0x201, 3, methods, 0, NULL, 0, NULL};
+  return &_ComGoodowRealtimeJsonJsonFactory;
 }
 
 @end

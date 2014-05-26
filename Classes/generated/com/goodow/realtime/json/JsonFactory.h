@@ -5,26 +5,24 @@
 //  Created by retechretech.
 //
 
-#ifndef _GDJsonFactory_H_
-#define _GDJsonFactory_H_
+#ifndef _ComGoodowRealtimeJsonJsonFactory_H_
+#define _ComGoodowRealtimeJsonJsonFactory_H_
 
-@protocol GDJsonArray;
-@protocol GDJsonObject;
+@protocol ComGoodowRealtimeJsonJsonArray;
+@protocol ComGoodowRealtimeJsonJsonObject;
 
 #import "JreEmulation.h"
 
-@protocol GDJsonFactory < NSObject, JavaObject >
+@protocol ComGoodowRealtimeJsonJsonFactory < NSObject, JavaObject >
 
-- (id<GDJsonArray>)createArray;
+- (id<ComGoodowRealtimeJsonJsonArray>)createArray;
 
-- (id<GDJsonObject>)createObject;
+- (id<ComGoodowRealtimeJsonJsonObject>)createObject;
 
 - (id)parseWithNSString:(NSString *)jsonString;
 
 @end
 
-__attribute__((always_inline)) inline void GDJsonFactory_init() {}
+__attribute__((always_inline)) inline void ComGoodowRealtimeJsonJsonFactory_init() {}
 
-#define ComGoodowRealtimeJsonJsonFactory GDJsonFactory
-
-#endif // _GDJsonFactory_H_
+#endif // _ComGoodowRealtimeJsonJsonFactory_H_

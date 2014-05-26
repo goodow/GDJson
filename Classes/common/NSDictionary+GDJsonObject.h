@@ -19,8 +19,9 @@
 //  Created by Larry Tin.
 //
 
-#import "GDJson.h"
+#import <Foundation/Foundation.h>
+@protocol  ComGoodowRealtimeJsonJsonObject;
 
-@interface NSDictionary (GDJsonObject) <GDJsonObject>
+@interface NSDictionary (GDJsonObject) <ComGoodowRealtimeJsonJsonObject>
 
 @end

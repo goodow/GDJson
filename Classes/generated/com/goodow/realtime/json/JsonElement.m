@@ -7,10 +7,10 @@
 
 #include "com/goodow/realtime/json/JsonElement.h"
 
-@interface GDJsonElement : NSObject
+@interface ComGoodowRealtimeJsonJsonElement : NSObject
 @end
 
-@implementation GDJsonElement
+@implementation ComGoodowRealtimeJsonJsonElement
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
@@ -20,8 +20,8 @@
     { "isObject", NULL, "Z", 0x401, NULL },
     { "toJsonString", NULL, "Ljava.lang.String;", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonElement = { "JsonElement", "com.goodow.realtime.json", NULL, 0x201, 5, methods, 0, NULL, 0, NULL};
-  return &_GDJsonElement;
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonElement = { "JsonElement", "com.goodow.realtime.json", NULL, 0x201, 5, methods, 0, NULL, 0, NULL};
+  return &_ComGoodowRealtimeJsonJsonElement;
 }
 
 @end
