@@ -9,7 +9,6 @@
 #define _ComGoodowRealtimeJsonJsonObject_H_
 
 @class ComGoodowRealtimeJsonJsonTypeEnum;
-@class IOSObjectArray;
 @protocol ComGoodowRealtimeJsonJsonArray;
 @protocol ComGoodowRealtimeJsonJsonObject_MapIterator;
 
@@ -39,7 +38,7 @@
 
 - (BOOL)hasWithNSString:(NSString *)key;
 
-- (IOSObjectArray *)keys;
+- (id<ComGoodowRealtimeJsonJsonArray>)keys;
 
 - (id)removeWithNSString:(NSString *)key;
 

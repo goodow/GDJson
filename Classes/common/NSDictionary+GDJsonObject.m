@@ -23,7 +23,7 @@
 #import "NSDictionary+GDJsonObject.h"
 #import "com/goodow/realtime/json/Json.h"
 #import "java/lang/UnsupportedOperationException.h"
-#import "IOSClass.h"
+#import "NSArray+GDJsonArray.h"
 
 @implementation NSDictionary (GDJsonObject)
 
@@ -75,8 +75,8 @@
 - (BOOL)hasWithNSString:(NSString *)key {
   return [self objectForKey:key] != nil;
 }
-- (IOSObjectArray *)keys {
-  return [IOSObjectArray arrayWithNSArray:[self allKeys] type:[IOSClass classWithClass:[NSString class]]];
+- (id<ComGoodowRealtimeJsonJsonArray>)keys {
+  return [self allKeys];
 }
 - (void)forEachWithComGoodowRealtimeJsonJsonObject_MapIterator:(id<ComGoodowRealtimeJsonJsonObject_MapIterator>)handler {
   for (NSString *key in self) {

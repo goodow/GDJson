@@ -5,7 +5,6 @@
 //  Created by retechretech.
 //
 
-#include "IOSObjectArray.h"
 #include "com/goodow/realtime/json/JsonArray.h"
 #include "com/goodow/realtime/json/JsonObject.h"
 #include "com/goodow/realtime/json/JsonType.h"
@@ -28,7 +27,7 @@
     { "getStringWithNSString:", "getString", "Ljava.lang.String;", 0x401, NULL },
     { "getTypeWithNSString:", "getType", "Lcom.goodow.realtime.json.JsonType;", 0x401, NULL },
     { "hasWithNSString:", "has", "Z", 0x401, NULL },
-    { "keys", NULL, "[Ljava.lang.String;", 0x401, NULL },
+    { "keys", NULL, "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "removeWithNSString:", "remove", "TT;", 0x401, NULL },
     { "setWithNSString:withBoolean:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "setWithNSString:withDouble:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
