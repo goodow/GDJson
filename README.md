@@ -2,6 +2,8 @@ GDJson [![Build Status](https://travis-ci.org/goodow/GDJson.svg?branch=master)](
 =========
 Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC
 
+Visit [Google groups](https://groups.google.com/forum/#!forum/goodow-realtime) for discussions and announcements.
+
 ## Requirements
 
 GDJson depends on the NSJSONSerialization class, which is included in recent Foundation.framework:
