@@ -17,10 +17,6 @@ GDJson depends on the NSJSONSerialization class, which is included in recent Fou
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add GDJson to your project.
 
-1. Add these pods to your Podfile:
-```ruby
-pod 'J2ObjC', :git => 'https://github.com/goodow/j2objc.git'
-pod 'GDJson', :git => 'https://github.com/goodow/GDJson.git'
-```
+1. Add a pod entry for GDJson to your Podfile `pod 'GDJson', '~> 0.5'`
 2. Install the pod(s) by running `pod install`.
 3. Include GDJson wherever you need it with `#import "GDJson.h"`.

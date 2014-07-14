@@ -54,8 +54,16 @@ ComGoodowRealtimeJsonJsonTypeEnum *ComGoodowRealtimeJsonJsonTypeEnum_values[6];
   static J2ObjcMethodInfo methods[] = {
     { "init", NULL, NULL, 0x1, NULL },
   };
+  static J2ObjcFieldInfo fields[] = {
+    { "OBJECT", "OBJECT", 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_OBJECT,  },
+    { "ARRAY", "ARRAY", 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_ARRAY,  },
+    { "STRING", "STRING", 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_STRING,  },
+    { "NUMBER", "NUMBER", 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_NUMBER,  },
+    { "BOOLEAN", "BOOLEAN", 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_BOOLEAN,  },
+    { "NULL_", NULL, 0x4019, "Lcom.goodow.realtime.json.JsonType;", &ComGoodowRealtimeJsonJsonTypeEnum_NULL_,  },
+  };
   static const char *superclass_type_args[] = {"Lcom.goodow.realtime.json.JsonType;"};
-  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 1, methods, 0, NULL, 1, superclass_type_args};
+  static J2ObjcClassInfo _ComGoodowRealtimeJsonJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 1, methods, 6, fields, 1, superclass_type_args};
   return &_ComGoodowRealtimeJsonJsonTypeEnum;
 }
 
