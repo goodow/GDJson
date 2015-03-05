@@ -25,23 +25,15 @@
 @implementation ComGoodowRealtimeJsonJson
 
 + (id<ComGoodowRealtimeJsonJsonArray>)createArray {
-  return [[NSMutableArray alloc] init];
+  return ComGoodowRealtimeJsonJson_createArray();
 }
 
 + (id<ComGoodowRealtimeJsonJsonObject>)createObject {
-  return [[NSMutableDictionary alloc] init];
+  return ComGoodowRealtimeJsonJson_createObject();
 }
 
 + (id)parseWithNSString:(NSString *)jsonString {
-  NSError *error = nil;
-  id json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
-                                            options:NSJSONReadingMutableContainers | NSJSONReadingAllowFragments
-                                              error:&error];
-  if (!json) {
-    @throw [[ComGoodowRealtimeJsonJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Can't parse JSON string: %@", error]];
-  } else {
-    return json;
-  }
+  return ComGoodowRealtimeJsonJson_parseWithNSString_(jsonString);
 }
 
 + (NSString *)toJsonString:(id)element {
@@ -66,7 +58,7 @@
   } else if ([value isKindOfClass:[NSNumber class]]) {
     return ComGoodowRealtimeJsonJsonTypeEnum_get_NUMBER();
   } else if (value == nil) {
-    return ComGoodowRealtimeJsonJsonTypeEnum_get_NULL_();
+    return ComGoodowRealtimeJsonJsonTypeEnum_get_NULL();
   }
   @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:[NSString stringWithFormat:@"Invalid JSON type: %@", [[nil_chk(value) getClass] getName]]];
 }
@@ -76,3 +68,23 @@
 }
 
 @end
+
+id<ComGoodowRealtimeJsonJsonArray> ComGoodowRealtimeJsonJson_createArray() {
+  return [[NSMutableArray alloc] init];
+}
+
+id<ComGoodowRealtimeJsonJsonObject> ComGoodowRealtimeJsonJson_createObject() {
+  return [[NSMutableDictionary alloc] init];
+}
+
+id ComGoodowRealtimeJsonJson_parseWithNSString_(NSString *jsonString) {
+  NSError *error = nil;
+  id json = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
+                                            options:NSJSONReadingMutableContainers | NSJSONReadingAllowFragments
+                                              error:&error];
+  if (!json) {
+    @throw [[ComGoodowRealtimeJsonJsonException alloc] initWithNSString:[NSString stringWithFormat:@"Can't parse JSON string: %@", error]];
+  } else {
+    return json;
+  }
+}

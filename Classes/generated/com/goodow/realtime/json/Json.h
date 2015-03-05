@@ -35,4 +35,14 @@
 
 @end
 
+CF_EXTERN_C_BEGIN
+
+FOUNDATION_EXPORT id<ComGoodowRealtimeJsonJsonArray> ComGoodowRealtimeJsonJson_createArray();
+
+FOUNDATION_EXPORT id<ComGoodowRealtimeJsonJsonObject> ComGoodowRealtimeJsonJson_createObject();
+
+FOUNDATION_EXPORT id ComGoodowRealtimeJsonJson_parseWithNSString_(NSString *jsonString);
+
+CF_EXTERN_C_END
+
 #endif // _ComGoodowRealtimeJsonJson_H_
