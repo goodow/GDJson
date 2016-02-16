@@ -13,7 +13,7 @@ GDJson depends on the NSJSONSerialization class, which is included in recent Fou
 
 ## Adding GDJson to your project
 
-### Cocoapods
+### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is the recommended way to add GDJson to your project.
 
